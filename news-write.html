@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="light" lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>한양부동산 | 글 쓰기</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+  </style>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "border": "#e5e8eb",
+            "on-primary": "#ffffff",
+            "body": "#4e5968",
+            "on-surface": "#181c23",
+            "canvas": "#ffffff",
+            "foreground": "#191f28",
+            "surface": "#f2f4f6",
+            "primary": "#0059b9",
+            "muted": "#8b95a1",
+            "primary-hover": "#2272eb",
+            "surface-container-highest": "#e0e2ec"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-canvas text-foreground min-h-screen flex flex-col pb-32">
+
+  <header class="bg-canvas/80 backdrop-blur-md sticky top-0 z-50 border-b border-border">
+    <div class="flex justify-between items-center h-16 px-6 max-w-[1200px] mx-auto w-full">
+      <a class="text-xl font-bold text-primary tracking-tight" href="index.html">한양부동산</a>
+      <nav class="hidden md:flex gap-8">
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-semibold" href="index.html#search">매물검색</a>
+        <a class="text-on-surface-variant hover:text-primary transition-colors font-semibold" href="index.html#consult">상담신청</a>
+        <a class="text-primary font-bold border-b-2 border-primary pb-1 transition-colors" href="news">소식게시판</a>
+      </nav>
+      <a href="tel:031-483-7600" class="flex items-center justify-center bg-primary text-on-primary px-5 py-2.5 rounded-xl font-bold hover:bg-primary-hover transition-all active:scale-95 min-h-[44px]">전화상담</a>
+    </div>
+  </header>
+
+  <main class="flex-grow max-w-[800px] w-full mx-auto px-6 py-12">
+    <div class="bg-white p-6 md:p-10 rounded-3xl border border-border shadow-sm">
+      <h1 id="page-title" class="text-2xl md:text-3xl font-bold text-foreground mb-8">글 쓰기</h1>
+
+      <form id="write-form" class="space-y-6">
+        <div>
+          <label class="block text-sm font-bold text-on-surface mb-2 text-[14px]">구분 (카테고리)</label>
+          <select id="post-category" class="w-full h-12 px-4 rounded-xl border border-border focus:border-primary focus:ring-0 transition-colors text-[14px]" required>
+            <option value="공지사항">공지사항</option>
+            <option value="매물정보">매물정보</option>
+            <option value="부동산소식">부동산소식</option>
+            <option value="기타">기타</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-bold text-on-surface mb-2 text-[14px]">제목</label>
+          <input id="post-title" class="w-full h-12 px-4 rounded-xl border border-border focus:border-primary focus:ring-0 transition-colors text-[14px]" placeholder="제목을 입력하세요" type="text" required>
+        </div>
+
+        <div>
+          <label class="block text-sm font-bold text-on-surface mb-2 text-[14px]">내용 (마크다운 지원)</label>
+          <textarea id="post-content" rows="12" class="w-full p-4 rounded-xl border border-border focus:border-primary focus:ring-0 transition-colors text-[14px]" placeholder="마크다운 문법을 사용하여 내용을 입력하세요." required></textarea>
+        </div>
+
+        <div class="flex gap-4 justify-end pt-4">
+          <button type="button" onclick="history.back()" class="bg-surface text-foreground font-bold px-6 py-3 rounded-xl hover:bg-border transition-all active:scale-95 min-h-[44px]">취소</button>
+          <button type="submit" class="bg-primary text-on-primary font-bold px-8 py-3 rounded-xl hover:bg-primary-hover transition-all active:scale-95 min-h-[44px]">저장하기</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script src="db.js"></script>
+  <script>
+    window.db.requireAdmin();
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = urlParams.get('id');
+    let isEditMode = false;
+
+    async function setupForm() {
+      if (postId) {
+        isEditMode = true;
+        document.getElementById('page-title').textContent = '글 수정';
+        
+        try {
+          const posts = await window.db.getPosts();
+          const post = posts.find(p => p.id === postId);
+          if (post) {
+            document.getElementById('post-category').value = post.category || '공지사항';
+            document.getElementById('post-title').value = post.title || '';
+            document.getElementById('post-content').value = post.content || '';
+          } else {
+            alert('수정할 게시글을 찾을 수 없습니다.');
+            window.location.href = 'news';
+          }
+        } catch (e) {
+          console.error("Failed to load post for editing:", e);
+        }
+      }
+    }
+
+    document.getElementById('write-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const category = document.getElementById('post-category').value;
+      const title = document.getElementById('post-title').value;
+      const content = document.getElementById('post-content').value;
+      
+      const newPost = {
+        category,
+        title,
+        content
+      };
+      
+      if (isEditMode) {
+        newPost.id = postId;
+      }
+      
+      try {
+        await window.db.savePost(newPost);
+        alert(isEditMode ? '게시글이 수정되었습니다.' : '게시글이 저장되었습니다.');
+        window.location.href = isEditMode ? `news-detail?id=${postId}` : 'news';
+      } catch (err) {
+        alert('저장에 실패했습니다: ' + err.message);
+      }
+    });
+
+    window.addEventListener('DOMContentLoaded', setupForm);
+  </script>
+</body>
+</html>

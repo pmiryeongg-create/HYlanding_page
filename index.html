@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html class="light" lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>한양부동산 | 초지역 e편한세상 센트럴포레 전문</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(229, 232, 235, 0.5);
+    }
+  </style>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-error-container": "#93000a",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#ffdbc8",
+            "border": "#e5e8eb",
+            "on-secondary-fixed": "#360f00",
+            "on-primary": "#ffffff",
+            "weak-fg": "#1b64da",
+            "on-primary-fixed": "#001a40",
+            "secondary": "#a33e00",
+            "outline": "#727785",
+            "surface-container-highest": "#e0e2ec",
+            "on-primary-fixed-variant": "#004491",
+            "primary-fixed": "#d7e2ff",
+            "inverse-on-surface": "#eff0fa",
+            "on-surface": "#181c23",
+            "on-tertiary-container": "#fffbff",
+            "body": "#4e5968",
+            "inverse-primary": "#acc7ff",
+            "on-primary-container": "#fefcff",
+            "surface-dim": "#d8d9e3",
+            "surface-bright": "#f9f9ff",
+            "on-tertiary-fixed": "#311300",
+            "surface-tint": "#005bbe",
+            "on-secondary-container": "#541d00",
+            "secondary-container": "#fe6500",
+            "secondary-fixed": "#ffdbcd",
+            "primary-fixed-dim": "#acc7ff",
+            "canvas": "#ffffff",
+            "foreground": "#191f28",
+            "surface-container-lowest": "#ffffff",
+            "on-surface-variant": "#414754",
+            "on-secondary-fixed-variant": "#7c2e00",
+            "accent-tint": "#fff5f0",
+            "surface": "#f2f4f6",
+            "inverse-surface": "#2d3038",
+            "on-error": "#ffffff",
+            "danger": "#e42939",
+            "outline-variant": "#c1c6d6",
+            "tertiary-container": "#ba5900",
+            "primary-container": "#1071e5",
+            "on-background": "#181c23",
+            "weak-bg": "#e8f3ff",
+            "surface-variant": "#e0e2ec",
+            "on-secondary": "#ffffff",
+            "primary": "#0059b9",
+            "muted": "#8b95a1",
+            "surface-container": "#ecedf7",
+            "secondary-fixed-dim": "#ffb596",
+            "surface-container-low": "#f2f3fd",
+            "background": "#f9f9ff",
+            "surface-container-high": "#e6e8f2",
+            "error-container": "#ffdad6",
+            "error": "#ba1a1a",
+            "on-tertiary-fixed-variant": "#743500",
+            "tertiary-fixed-dim": "#ffb689",
+            "tertiary": "#944600",
+            "primary-hover": "#2272eb"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-desktop": "auto",
+            "gutter": "16px",
+            "base": "4px",
+            "margin-mobile": "20px",
+            "section-gap": "64px"
+          },
+          "fontFamily": {
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["28px", {"lineHeight": "1.35", "fontWeight": "700"}],
+            "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+            "headline-md": ["24px", {"lineHeight": "1.35", "fontWeight": "600"}],
+            "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+            "headline-lg": ["32px", {"lineHeight": "1.35", "fontWeight": "700"}],
+            "headline-xl-mobile": ["32px", {"lineHeight": "1.35", "fontWeight": "700"}],
+            "headline-xl": ["40px", {"lineHeight": "1.35", "fontWeight": "700"}],
+            "title-md": ["20px", {"lineHeight": "1.35", "fontWeight": "700"}]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-canvas text-foreground overflow-x-hidden pb-16 md:pb-0">
+
+  <header class="bg-canvas/80 backdrop-blur-md sticky top-0 z-50 border-b border-border">
+    <div class="flex justify-between items-center h-16 px-margin-mobile md:px-margin-desktop max-w-[1200px] mx-auto w-full">
+      <a class="text-title-md font-title-md text-primary tracking-tight" href="#">한양부동산</a>
+      <nav class="hidden md:flex gap-8">
+        <a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md transition-colors" href="#search">매물검색</a>
+        <a class="text-on-surface-variant hover:text-primary-hover font-body-md text-body-md transition-colors" href="#consult">상담신청</a>
+        <a class="text-on-surface-variant hover:text-primary-hover font-body-md text-body-md transition-colors" href="news">소식게시판</a>
+      </nav>
+      <a href="tel:031-483-7600" class="flex items-center justify-center bg-primary text-on-primary px-5 py-2.5 rounded-xl font-bold font-body-md text-body-md hover:bg-primary-hover transition-all active:scale-95 min-h-[44px]">전화상담</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative min-h-[600px] flex items-center overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent"></div>
+      <div class="relative z-10 max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop w-full grid md:grid-cols-2 gap-12 items-center">
+        <div class="flex flex-col gap-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-weak-bg text-weak-fg rounded-full w-fit">
+            <span class="material-symbols-outlined text-sm">home_pin</span>
+            <span class="text-body-sm font-bold">초지역 e편한세상 센트럴포레 단지 내 부동산</span>
+          </div>
+          <h1 class="font-headline-xl text-headline-xl leading-tight text-[32px] md:text-[40px]"><span class="text-primary">안산</span>에서 믿고 맡기는<br>부동산 파트너</h1>
+          <p class="text-body-md text-body max-w-md text-[14px] md:text-[16px]">주거용부터 상업용 부동산까지<br>원하는 조건에 맞는 매물을 함께 찾아드립니다.</p>
+          <div class="flex gap-4">
+            <a href="tel:031-483-7600" class="flex items-center justify-center bg-primary text-on-primary h-[56px] px-8 rounded-xl font-bold text-[16px] hover:bg-primary-hover transition-all shadow-sm min-w-[120px] min-h-[44px]">☎ 전화상담</a>
+            <a href="#" class="bg-secondary-container text-on-secondary-container h-[56px] px-8 rounded-xl font-bold text-[16px] hover:opacity-90 transition-all flex items-center justify-center gap-2 min-w-[120px] min-h-[44px]">
+              <span class="material-symbols-outlined">chat</span>
+              카톡 상담하기
+            </a>
+          </div>
+        </div>
+        <div class="hidden md:block">
+          <div class="relative group">
+            <div class="absolute -inset-4 bg-primary/10 rounded-[2rem] blur-2xl group-hover:bg-primary/20 transition-all duration-700"></div>
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3] transform hover:scale-[1.02] transition-transform duration-500">
+              <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDsDCOZyHq5xeaJdhah6uPv-fTWhhKbj_O60tNgQ3LltHSFV_dok0yqTGmFW6yCF2fA2x9EKiXuWveL-u40IiUiY7n-HIWxzfyy8oQ08U5JXr0KiOfXEuRv2cCX0wVs0LNNSpFUcLc9EfFKTJtxatWy2ipd8RaR11pGfNHVTV_6I0i9FXGX2KlMxSbnJFDDbR1gSXrWayiMHsX4_5v0lifJWR9hkQUvhNmJMVpC2ZIfMb6hrmHWpn8ELA');"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-section-gap max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="text-center mb-16">
+        <h2 class="font-headline-lg text-headline-lg mb-4 text-[28px] md:text-[32px]">왜 한양부동산인가요?</h2>
+        <p class="text-body-md text-muted text-[14px] md:text-[16px]">좋은 매물만큼, 좋은 중개사가 중요합니다.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        <div class="bg-surface p-8 rounded-2xl flex flex-col gap-4 border border-border hover:border-primary transition-all group">
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined text-3xl">storefront</span>
+          </div>
+          <h3 class="font-title-md text-title-md text-[20px]">안산 전 지역 매물 상담</h3>
+          <p class="text-body-md text-body leading-relaxed text-[14px] md:text-[16px]">안산 전 지역에서 원하시는 조건에 맞는 매물을 함께 찾아드립니다.</p>
+        </div>
+        <div class="bg-primary text-on-primary p-8 rounded-2xl flex flex-col gap-4 shadow-xl shadow-primary/20 transform md:-translate-y-4">
+          <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-white">
+            <span class="material-symbols-outlined text-3xl">verified</span>
+          </div>
+          <h3 class="font-title-md text-title-md text-[20px]">정확한 가치 분석</h3>
+          <p class="text-on-primary/80 text-body-md leading-relaxed text-[14px] md:text-[16px]">실거래가 · 시세 · 상권 데이터로 적정 가치와 시장 흐름을 짚어드립니다.</p>
+        </div>
+        <div class="bg-surface p-8 rounded-2xl flex flex-col gap-4 border border-border hover:border-primary transition-all group">
+          <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+            <span class="material-symbols-outlined text-3xl">gavel</span>
+          </div>
+          <h3 class="font-title-md text-title-md text-[20px]">안전한 계약진행</h3>
+          <p class="text-body-md text-body leading-relaxed text-[14px] md:text-[16px]">계약 전 권리관계를 꼼꼼히 확인하고, 계약부터 입주까지 함께합니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-surface-container-low py-section-gap">
+      <div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div>
+            <h2 class="font-headline-lg text-headline-lg mb-2 text-[28px] md:text-[32px]">믿을 수 있는 파트너</h2>
+            <p class="text-body-md text-body text-[14px] md:text-[16px]">정직한 중개를 약속드리는 공인중개사를 소개합니다.</p>
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="glass-card p-6 rounded-2xl flex flex-col md:flex-row gap-6 hover:shadow-lg transition-shadow duration-300">
+            <div class="w-full md:w-48 h-64 md:h-auto rounded-xl overflow-hidden flex-shrink-0">
+              <img class="w-full h-full object-cover max-w-full" src="man.png" alt="이성민 대표공인중개사">
+            </div>
+            <div class="flex flex-col justify-center">
+              <div class="mb-4">
+                <span class="bg-primary/10 text-primary text-[12px] font-bold px-2 py-1 rounded">대표 공인중개사</span>
+                <h3 class="text-headline-md font-headline-md mt-2 text-[24px]">이 성 민</h3>
+              </div>
+              <p class="text-body-md text-body mb-6 text-[14px] md:text-[16px]">"좋은 계약은 신뢰에서 시작된다고 믿습니다. 고객의 입장에서 한 번 더 생각하며 끝까지 책임 있게 함께하겠습니다. 계약이 끝난 뒤에도 다시 찾고 싶은 부동산이 되겠습니다."</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-body-sm text-muted bg-white border border-border px-3 py-1 rounded-full text-[14px]">공인중개사</span>
+                <span class="text-body-sm text-muted bg-white border border-border px-3 py-1 rounded-full text-[14px]">상가분석 전문</span>
+              </div>
+            </div>
+          </div>
+          <div class="glass-card p-6 rounded-2xl flex flex-col md:flex-row gap-6 hover:shadow-lg transition-shadow duration-300">
+            <div class="w-full md:w-48 h-64 md:h-auto rounded-xl overflow-hidden flex-shrink-0">
+              <img class="w-full h-full object-cover max-w-full" src="woman%20Image.png" alt="박미령 대표공인중개사">
+            </div>
+            <div class="flex flex-col justify-center">
+              <div class="mb-4">
+                <span class="bg-primary/10 text-primary text-[12px] font-bold px-2 py-1 rounded">대표 공인중개사</span>
+                <h3 class="text-headline-md font-headline-md mt-2 text-[24px]">박 미 령</h3>
+              </div>
+              <p class="text-body-md text-body mb-6 text-[14px] md:text-[16px]">"복잡한 부동산도 쉽게 설명해드립니다. 처음 집을 구하시는 분도, 투자 목적의 고객도 이해하기 쉽게 설명하고 함께 고민하는 것이 제 역할이라고 생각합니다."</p>
+              <div class="flex flex-wrap gap-2">
+                <span class="text-body-sm text-muted bg-white border border-border px-3 py-1 rounded-full text-[14px]">공인중개사</span>
+                <span class="text-body-sm text-muted bg-white border border-border px-3 py-1 rounded-full text-[14px]">아파트·오피스텔 전문</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="board-preview" class="py-section-gap max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop" style="display: none;">
+      <div class="flex justify-between items-end mb-12">
+        <div>
+          <h2 class="font-headline-lg text-headline-lg mb-2 text-[28px] md:text-[32px]">최신 소식</h2>
+          <p class="text-body-md text-muted text-[14px] md:text-[16px]">한양부동산의 새로운 소식과 유용한 정보를 전해드립니다.</p>
+        </div>
+        <a href="news" class="hidden md:inline-flex items-center gap-1 text-primary font-bold hover:text-primary-hover transition-colors min-h-[44px]">
+          전체 보기 <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+      <div id="preview-list" class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-8">
+      </div>
+      <div class="text-center md:hidden">
+        <a href="news" class="inline-flex items-center justify-center bg-primary text-on-primary px-6 py-3 rounded-xl font-bold hover:bg-primary-hover transition-colors w-full min-h-[44px]">
+          전체 게시글 보기
+        </a>
+      </div>
+    </section>
+
+    <section class="py-section-gap max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop" id="consult">
+      <div class="bg-accent-tint rounded-[2.5rem] p-8 md:p-16 flex flex-col md:flex-row items-center gap-16 overflow-hidden relative" style="background-color: rgb(255, 245, 240);">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-secondary-container/5 rounded-full -mr-32 -mt-32"></div>
+        <div class="flex-1 space-y-6 relative z-10">
+          <div class="inline-flex items-center gap-2 text-secondary font-bold">
+            <span class="material-symbols-outlined">campaign</span>
+            <span class="text-body-md">빠르고 정확한 상담</span>
+          </div>
+          <h2 class="font-headline-lg text-headline-lg text-[28px] md:text-[32px]">매물 내놓기</h2>
+          <p class="text-body-md text-body text-[14px] md:text-[16px]">
+            복잡한 절차 없이 간편하게 접수하세요.<br>
+            한양부동산의 전문 마케팅을 통해 최적의 가격으로 빠르게 매칭해 드립니다.
+          </p>
+          <div class="flex items-center gap-4 text-primary font-bold">
+            <span class="material-symbols-outlined">call</span>
+            <span class="text-title-md text-[20px]">031-483-7600</span>
+          </div>
+        </div>
+        <div class="flex-1 w-full bg-white p-8 rounded-3xl shadow-xl shadow-secondary/5 relative z-10 border border-border">
+          <form class="space-y-4" onsubmit="event.preventDefault(); alert('상담 신청이 접수되었습니다.');">
+            <div>
+              <label class="block text-body-sm font-bold text-on-surface mb-2 text-[14px]">성함</label>
+              <input class="w-full h-12 px-4 rounded-xl border border-border focus:border-primary focus:ring-0 transition-colors text-[14px]" placeholder="성함을 입력해주세요" type="text" required>
+            </div>
+            <div>
+              <label class="block text-body-sm font-bold text-on-surface mb-2 text-[14px]">연락처</label>
+              <input class="w-full h-12 px-4 rounded-xl border border-border focus:border-primary focus:ring-0 transition-colors text-[14px]" placeholder="010-0000-0000" type="tel" required>
+            </div>
+            <div>
+              <label class="block text-body-sm font-bold text-on-surface mb-2 text-[14px]">매물유형</label>
+              <div class="grid grid-cols-4 gap-2">
+                <label class="cursor-pointer">
+                  <input class="hidden peer" name="type" type="radio" checked>
+                  <div class="text-center py-2 rounded-xl border border-border peer-checked:bg-secondary peer-checked:text-white peer-checked:border-secondary transition-all text-body-sm text-[14px]">아파트</div>
+                </label>
+                <label class="cursor-pointer">
+                  <input class="hidden peer" name="type" type="radio">
+                  <div class="text-center py-2 rounded-xl border border-border peer-checked:bg-secondary peer-checked:text-white peer-checked:border-secondary transition-all text-body-sm text-[14px]">상가</div>
+                </label>
+                <label class="cursor-pointer">
+                  <input class="hidden peer" name="type" type="radio">
+                  <div class="text-center py-2 rounded-xl border border-border peer-checked:bg-secondary peer-checked:text-white peer-checked:border-secondary transition-all text-body-sm text-[14px]">오피스텔</div>
+                </label>
+                <label class="cursor-pointer">
+                  <input class="hidden peer" name="type" type="radio">
+                  <div class="text-center py-2 rounded-xl border border-border peer-checked:bg-secondary peer-checked:text-white peer-checked:border-secondary transition-all text-body-sm text-[14px]">기타</div>
+                </label>
+              </div>
+            </div>
+            <button class="w-full h-14 bg-secondary text-white rounded-xl font-bold text-[18px] mt-4 hover:opacity-90 transition-all shadow-lg shadow-secondary/20 min-h-[44px]" style="background-color: rgb(255, 102, 0); color: rgb(255, 255, 255);" type="submit">신청하기</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-section-gap bg-surface">
+      <div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="rounded-3xl overflow-hidden h-[400px] shadow-lg grayscale hover:grayscale-0 transition-all duration-700">
+            <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7YSWRKRboHIeJ7dwxH7jDpclYwhtbp2SdD8PPcSISl_ZY869hmvH89PiL3YOr10rVOW4U1n8YNX7BRpFeuSL-cE2m1MOJMdzejmmlWK7MSNCUN5h-PgRQQ6po2OkFlMkJ_qreX2lQIrPgDyF3SBH_beZVFHFilAna2qQcWgbigI4TX6jyRZtQSG8bTl6f9B5drVB9hj47CiG4kLydv6INDaVS-sgxRKw0pDbQTwKC1Yi8HJIhoOFskQ" alt="한양부동산 오시는 길 지도">
+          </div>
+          <div class="space-y-6">
+            <h2 class="font-headline-lg text-headline-lg text-[28px] md:text-[32px]">한양부동산 오시는 길</h2>
+            <div class="space-y-4">
+              <div class="flex gap-4 items-start">
+                <span class="material-symbols-outlined text-primary">location_on</span>
+                <div>
+                  <p class="font-bold text-on-surface text-[14px] md:text-[16px]">주소</p>
+                  <p class="text-body text-body-md text-[14px] md:text-[16px]">경기도 안산시 단원구 화랑로102, 센트럴포레 단지 내 상가 1동 106호</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start">
+                <span class="material-symbols-outlined text-primary">schedule</span>
+                <div>
+                  <p class="font-bold text-on-surface text-[14px] md:text-[16px]">운영시간</p>
+                  <p class="text-body text-body-md text-[14px] md:text-[16px]">평일, 토요일 09:30 - 19:00 (일요일 휴무)<br>24시간 전화, 문자상담 가능합니다.</p>
+                </div>
+              </div>
+              <div class="flex gap-4 items-start">
+                <span class="material-symbols-outlined text-primary">directions_subway</span>
+                <div>
+                  <p class="font-bold text-on-surface text-[14px] md:text-[16px]">교통안내</p>
+                  <p class="text-body text-body-md text-[14px] md:text-[16px]">초지역(4호선, 수인분당선, 서해선) 1번 출구 도보 10분</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-surface-container-highest py-section-gap w-full px-margin-mobile md:px-margin-desktop">
+    <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+      <div class="space-y-4">
+        <span class="font-title-md text-title-md text-on-surface block text-[20px]">한양공인중개사사무소</span>
+        <p class="text-body text-body-sm text-[14px]">대표: 이성민 <br>사업자등록번호: 899-60-00442<br>중개업소 등록번호: 제41273-2020-00100호</p>
+        <div class="flex flex-wrap gap-4 text-body-sm text-muted text-[14px]">
+          <a class="hover:text-on-surface transition-colors" href="#">사업자정보확인</a>
+          <a class="hover:text-on-surface transition-colors" href="#">이용약관</a>
+          <a class="hover:text-on-surface transition-colors font-bold text-primary underline" href="#">개인정보처리방침</a>
+          <a id="agent-login-btn" class="hover:text-on-surface transition-colors text-primary font-bold" href="admin.html">Agent Login</a>
+        </div>
+        <p class="text-body-sm text-muted text-[14px]">© 2026 한양부동산 공인중개사사무소. All rights reserved.</p>
+      </div>
+      <div class="flex gap-4">
+        <button class="w-12 h-12 rounded-full border border-border flex items-center justify-center hover:bg-white transition-colors min-h-[44px] min-w-[44px]">
+          <span class="material-symbols-outlined text-body">share</span>
+        </button>
+        <a href="tel:031-483-7600" class="w-12 h-12 rounded-full border border-border flex items-center justify-center hover:bg-white transition-colors min-h-[44px] min-w-[44px]">
+          <span class="material-symbols-outlined text-body">call</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="fixed bottom-0 left-0 w-full flex justify-between items-center gap-4 px-5 py-3 md:hidden bg-canvas/90 backdrop-blur-md border-t border-border z-50 shadow-lg">
+    <a class="flex items-center justify-center bg-primary text-on-primary rounded-xl px-6 py-3 w-full gap-2 active:scale-95 transition-transform min-h-[44px]" href="tel:031-483-7600">
+      <span class="material-symbols-outlined">call</span>
+      <span class="font-body-sm text-body-sm font-bold">전화상담</span>
+    </a>
+    <a class="flex items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-6 py-3 w-full gap-2 active:scale-95 transition-transform min-h-[44px]" href="#">
+      <span class="material-symbols-outlined">chat</span>
+      <span class="font-body-sm text-body-sm font-bold">카톡문의</span>
+    </a>
+  </nav>
+
+  <script src="db.js"></script>
+  <script>
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 20) {
+        header.classList.add('shadow-sm');
+      } else {
+        header.classList.remove('shadow-sm');
+      }
+    });
+
+    async function loadPreview() {
+      try {
+        const posts = await window.db.getPosts();
+        const previewSection = document.getElementById('board-preview');
+        const previewList = document.getElementById('preview-list');
+        
+        if (!posts || posts.length === 0) {
+          previewSection.style.display = 'none';
+          return;
+        }
+        
+        previewSection.style.display = 'block';
+        const recentPosts = posts.slice(0, 3);
+        
+        previewList.innerHTML = recentPosts.map(post => {
+          const textSummary = window.db.markdownToText(post.content).slice(0, 60);
+          return `
+            <div onclick="location.href='news-detail?id=${post.id}'" class="bg-surface p-6 rounded-2xl border border-border hover:border-primary hover:shadow-md transition-all cursor-pointer flex flex-col justify-between h-full group">
+              <div>
+                <span class="bg-primary/10 text-primary text-[12px] font-bold px-2 py-1 rounded inline-block mb-3">${window.db.escapeHtml(post.category || '일반')}</span>
+                <h3 class="font-title-md text-title-md text-foreground mb-2 group-hover:text-primary transition-colors text-[20px]">${window.db.escapeHtml(post.title)}</h3>
+                <p class="text-body text-body-sm line-clamp-3 mb-4 text-[14px]">${window.db.escapeHtml(textSummary)}...</p>
+              </div>
+              <span class="text-muted text-[12px]">${window.db.escapeHtml(post.date)}</span>
+            </div>
+          `;
+        }).join('');
+      } catch (e) {
+        console.error("Failed to load board preview:", e);
+      }
+    }
+    
+    window.addEventListener('DOMContentLoaded', loadPreview);
+  </script>
+</body>
+</html>
