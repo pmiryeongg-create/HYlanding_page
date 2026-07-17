@@ -12,7 +12,8 @@ async function loadConfig() {
     github_owner: file.github_owner || '',
     github_repo: file.github_repo || '',
     data_file_path: file.data_file_path || 'data/posts.json',
-    admin_password: api.admin_password || file.admin_password || 'admin1234'
+    admin_password: api.admin_password || file.admin_password || 'admin1234',
+    kakao_channel_id: api.kakao_channel_id || file.kakao_channel_id || '_your_channel_id'
   };
   return _config;
 }
@@ -332,6 +333,27 @@ async function deletePost(id) {
   localStorage.setItem('posts', JSON.stringify(posts));
 }
 
+async function openKakaoTalk() {
+  const config = await loadConfig();
+  const channelId = config.kakao_channel_id || '_your_channel_id';
+  const webUrl = `https://pf.kakao.com/${channelId}/chat`;
+  const appUrl = `kakaoplus://plusfriend/chat/${channelId}`;
+  
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  
+  if (isMobile) {
+    const start = Date.now();
+    window.location.href = appUrl;
+    setTimeout(() => {
+      if (Date.now() - start < 2000) {
+        window.location.href = webUrl;
+      }
+    }, 1500);
+  } else {
+    window.open(webUrl, '_blank');
+  }
+}
+
 window.db = {
   loadConfig,
   isAdmin,
@@ -341,5 +363,6 @@ window.db = {
   markdownToText,
   getPosts,
   savePost,
-  deletePost
+  deletePost,
+  openKakaoTalk
 };

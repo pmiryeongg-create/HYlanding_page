@@ -150,10 +150,10 @@
           <p class="text-body-md text-body max-w-md text-[14px] md:text-[16px]">주거용부터 상업용 부동산까지<br>원하는 조건에 맞는 매물을 함께 찾아드립니다.</p>
           <div class="flex gap-4">
             <a href="tel:031-483-7600" class="flex items-center justify-center bg-primary text-on-primary h-[56px] px-8 rounded-xl font-bold text-[16px] hover:bg-primary-hover transition-all shadow-sm min-w-[120px] min-h-[44px]">☎ 전화상담</a>
-            <a href="#" class="bg-secondary-container text-on-secondary-container h-[56px] px-8 rounded-xl font-bold text-[16px] hover:opacity-90 transition-all flex items-center justify-center gap-2 min-w-[120px] min-h-[44px]">
+            <button onclick="window.db.openKakaoTalk()" class="bg-secondary-container text-on-secondary-container h-[56px] px-8 rounded-xl font-bold text-[16px] hover:opacity-90 transition-all flex items-center justify-center gap-2 min-w-[120px] min-h-[44px]">
               <span class="material-symbols-outlined">chat</span>
               카톡 상담하기
-            </a>
+            </button>
           </div>
         </div>
         <div class="hidden md:block">
@@ -382,10 +382,10 @@
       <span class="material-symbols-outlined">call</span>
       <span class="font-body-sm text-body-sm font-bold">전화상담</span>
     </a>
-    <a class="flex items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-6 py-3 w-full gap-2 active:scale-95 transition-transform min-h-[44px]" href="#">
+    <button onclick="window.db.openKakaoTalk()" class="flex items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-6 py-3 w-full gap-2 active:scale-95 transition-transform min-h-[44px]">
       <span class="material-symbols-outlined">chat</span>
       <span class="font-body-sm text-body-sm font-bold">카톡문의</span>
-    </a>
+    </button>
   </nav>
 
   <script src="db.js"></script>
